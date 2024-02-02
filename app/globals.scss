@@ -10,6 +10,8 @@
   --primary-color: #ec682d;
   --secondary-color: #5c40c8;
   --font-family-headline: @font-face{font-family: cyrene; src=url (Cyrene.otf)}
+   --text-size: 20px;
+  --h2-size: 24px;
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -30,7 +32,8 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
+h1,
+h2 {
   font-family: cyrene, sans-serif;
   color: var(--secondary-color);
 }
@@ -44,20 +47,38 @@ header {
 nav {
   font-family: var(--font-family-text);
   color: var(--primary-color);
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid var(--primary-color);
   padding: 10px;
-  gap: 5rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+
+.navText {
+
+   align-items: center;
+    display: flex;
+}
 
   .logo {
-    img {
-     display: inline-block;
-      vertical-align: top;
       width: 2rem;
+      opacity: 1;
+      margin-right: 1rem;
+
 }
+ .icon {
+   opacity: 1;
+   margin-left: 10rem;
+   display: flex;
+   align-items: center;
+
+  }
+  .icon a {
+  width: 2rem;
+  margin-left: 1rem;
+
 }
+
 }
 
 

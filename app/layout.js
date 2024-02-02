@@ -18,13 +18,33 @@ export default function RootLayout({ children }) {
           <div>
             {/* <CookieBanner /> */}
             <nav>
-              {/* <a href="/">
-                <img src="./images/logo.png" alt="Logo" className="logo" /> Home
-              </a> */}
-              <Link href="/">Home</Link>
-              <Link href="/retreats">Retreats</Link>
-              <Link href="/about">About</Link>
-              <Link href="/contact">Contact</Link>
+              <a href="/">
+                <img src="./images/logo.png" alt="Logo" className="logo" />
+              </a>
+
+              <Link href="/" className="navText">
+                Home
+              </Link>
+
+              <Link href="/workshops" className="navText">
+                Workshops
+              </Link>
+
+              <Link href="/about" className="navText">
+                About
+              </Link>
+
+              <Link href="/contact" className="navText">
+                Contact
+              </Link>
+              <div className="icon">
+                <a href="/">
+                  <img src="./images/person.svg" alt="Account" />
+                </a>
+                <a href="/">
+                  <img src="./images/bag.svg" alt="shoppingcart" />
+                </a>
+              </div>
             </nav>
           </div>
         </header>
