@@ -36,7 +36,6 @@ export default function WorkshopPage() {
                 <div>
                   {workshop.price} {workshop.currency}
                 </div>
-                <div>{workshop.details}</div>
               </Link>
             </div>
           );
