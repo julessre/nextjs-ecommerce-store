@@ -1,17 +1,17 @@
 import './globals.scss';
 import React from 'react';
-import Header from './Header';
-import Products from './products/[productID]/page';
+
+// import Header from './_components/Header';
+
+// import Products from './products/[productID]/page';
 
 export default function Home() {
   return (
     <div>
-      <div>
-        <Header />
-      </div>
-      <div>
+      <div>{/* <Header /> */}</div>
+      {/* <div>
         <Products />
-      </div>
+      </div> */}
     </div>
   );
 }
