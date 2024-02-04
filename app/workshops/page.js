@@ -21,7 +21,10 @@ export default function WorkshopPage() {
         {workshops.map((workshop) => {
           return (
             <div key={`workshops-${workshop.id}`}>
-              <Link href={`/workshops/${workshop.id}`}>
+              <Link
+                href={`/workshops/${workshop.id}`}
+                data-test-id={`product-${workshop.id}`}
+              >
                 <Image
                   src={workshop.image}
                   width={250}
@@ -33,9 +36,8 @@ export default function WorkshopPage() {
                 </div>
                 <div>{workshop.date}</div>
                 <div>{workshop.time}</div>
-                <div>
-                  {workshop.price} {workshop.currency}
-                </div>
+                <div data-test-id="product-price">{workshop.price}</div>
+                <div>{workshop.currency}</div>
               </Link>
             </div>
           );

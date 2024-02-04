@@ -96,3 +96,19 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button {
+  background-color: var(--color-button);
+  color: white;
+  border-radius: 15px;
+  padding: 10px 15px;
+  border: 2px solid var(--color-button);
+  font-family: var(--font-family-text);
+
+  &:hover {
+  background-color: white;
+  border: 2px solid var(--color-button);
+  cursor: pointer;
+  color: var(--color-button);
+  }
+}

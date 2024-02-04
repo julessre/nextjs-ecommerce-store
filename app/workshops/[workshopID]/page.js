@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { getWorkshop } from '../../database/database';
 
 export function generateMetadata(props) {
-  const singleWorkshop = getWorkshop(Number(props.params.workshopId));
+  const singleWorkshop = getWorkshop(Number(props.params.workshopID));
 
   return {
     title: singleWorkshop?.title,
@@ -13,7 +12,7 @@ export function generateMetadata(props) {
 }
 
 export default function workshopPage(props) {
-  const singleWorkshop = getWorkshop(Number(props.params.workshopId));
+  const singleWorkshop = getWorkshop(Number(props.params.workshopID));
 
   if (!singleWorkshop) {
     notFound();
@@ -26,16 +25,15 @@ export default function workshopPage(props) {
         width={250}
         height={300}
         alt={singleWorkshop.title}
+        data-test-id="product-image"
       />
-      <div>
-        <h2>{singleWorkshop.title}</h2>
-      </div>
       <div>{singleWorkshop.date}</div>
       <div>{singleWorkshop.time}</div>
       <div>
         {singleWorkshop.price} {singleWorkshop.currency}
       </div>
       <div>{singleWorkshop.description}</div>
+      <button data-test-id="product-add-to-cart">Tickets</button>
     </div>
   );
 }
