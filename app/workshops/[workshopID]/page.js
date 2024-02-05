@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
+import CartButton from '../../_components/CartButton';
 import { getWorkshop } from '../../database/database';
 
 export function generateMetadata(props) {
@@ -33,7 +34,7 @@ export default function workshopPage(props) {
         {singleWorkshop.price} {singleWorkshop.currency}
       </div>
       <div>{singleWorkshop.description}</div>
-      <button data-test-id="product-add-to-cart">Tickets</button>
+      <CartButton />
     </div>
   );
 }
