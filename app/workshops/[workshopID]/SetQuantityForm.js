@@ -2,20 +2,28 @@
 
 import React, { useState } from 'react';
 import { adaptCookie } from './actions';
+import styles from './page.module.scss';
 
 export default function SetQuantityForm(props) {
-  const [quantity, setQuantity] = useState('');
+  const [quantity, setQuantity] = useState(1);
   return (
     <div>
       <form>
-        <input
+        <select
           value={quantity}
           onChange={(event) => setQuantity(event.currentTarget.value)}
-        />
+          className={styles.quantity}
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
         <button
           formAction={async () => await adaptCookie(props.workshopId, quantity)}
         >
-          Add Quantity
+          Book Ticket
         </button>
       </form>
     </div>

@@ -12,7 +12,7 @@ const workshops = [
     price: 75,
     currency: '€',
     fullyBooked: false,
-    description: `We love the meditating effect working with clay has! Just like in yoga there is no pressure, you can enjoy the process. If you have experience already or not – it is always nice to join the workshop. Maybe it is going to be a new inspiration you take home with you and find a ceramics course back home?!During this workshop we will learn how to make slabs to later stamp leaves or flowers and make a piece with it. There will be foliage available but you can collect your own.This workshop is suitable for everyone, as no prior experience is necessary. All materials are included, and you will be able to take your piece home. If you want to explore your creativity and connect it with nature this is for you!`,
+    description: `We love the meditating effect working with clay has! Just like in yoga there is no pressure, you can enjoy the process. If you have experience already or not – it is always nice to join the workshop. Maybe it is going to be a new inspiration you take home with you and find a ceramics course back home? During this workshop we will learn how to make slabs to later stamp leaves or flowers and make a piece with it. There will be foliage available but you can collect your own.This workshop is suitable for everyone, as no prior experience is necessary. All materials are included, and you will be able to take your piece home. If you want to explore your creativity and connect it with nature this is for you!`,
   },
   {
     id: 2,

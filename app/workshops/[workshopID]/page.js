@@ -4,6 +4,7 @@ import React from 'react';
 import { getWorkshop } from '../../database/database';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import styles from './page.module.scss';
 import SetQuantityForm from './SetQuantityForm';
 
 export function generateMetadata(props) {
@@ -33,23 +34,33 @@ export default function workshopPage(props) {
   });
 
   return (
-    <div>
-      <h1>{singleWorkshop.title}</h1>
-      <Image
-        src={singleWorkshop.image}
-        width={250}
-        height={300}
-        alt={singleWorkshop.title}
-        data-test-id="product-image"
-      />
-      <div>{singleWorkshop.date}</div>
-      <div>{singleWorkshop.time}</div>
-      <div>
-        {singleWorkshop.price} {singleWorkshop.currency}
+    <div className={styles.sectionContainer}>
+      <h1 className={styles.h1}>{singleWorkshop.title}</h1>
+      <div className={styles.contentBoxGrid}>
+        <div>
+          <div className={styles.textHighlight}>
+            <div>Date: {singleWorkshop.date}</div>
+            <div>Time: {singleWorkshop.time}</div>
+            <div>
+              Price: {singleWorkshop.price} {singleWorkshop.currency}
+            </div>
+          </div>
+          <div className={styles.description}>{singleWorkshop.description}</div>
+        </div>
+        <div>
+          <Image
+            src={singleWorkshop.image}
+            width={250}
+            height={300}
+            alt={singleWorkshop.title}
+            data-test-id="product-image"
+          />
+        </div>
       </div>
-      <div>{singleWorkshop.description}</div>
-      <div>{quantitiesToDisplay?.quantity}</div>
-      <SetQuantityForm workshopId={singleWorkshop.id} />
+      <div className={styles.bookTicketWrapper}>
+        <div>{quantitiesToDisplay?.quantity}</div>
+        <SetQuantityForm workshopId={singleWorkshop.id} />
+      </div>
     </div>
   );
 }
