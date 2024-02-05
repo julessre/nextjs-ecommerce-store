@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { adaptCookie } from './actions';
-import styles from './page.module.scss';
+import styles from './workshopPage.module.scss';
 
 export default function SetQuantityForm(props) {
   const [quantity, setQuantity] = useState(1);

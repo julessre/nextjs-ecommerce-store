@@ -4,8 +4,8 @@ import React from 'react';
 import { getWorkshop } from '../../database/database';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import styles from './page.module.scss';
 import SetQuantityForm from './SetQuantityForm';
+import styles from './workshopPage.module.scss';
 
 export function generateMetadata(props) {
   const singleWorkshop = getWorkshop(Number(props.params.workshopID));
