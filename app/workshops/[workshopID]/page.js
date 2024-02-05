@@ -2,6 +2,9 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { getWorkshop } from '../../database/database';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
+import SetQuantityForm from './SetQuantityForm';
 
 export function generateMetadata(props) {
   const singleWorkshop = getWorkshop(Number(props.params.workshopID));
@@ -17,6 +20,18 @@ export default function workshopPage(props) {
   if (!singleWorkshop) {
     notFound();
   }
+
+  // get cookie and parse it
+  const workshopsQuantityCookie = getCookie('quantityCookie');
+
+  const workshopsQuantity = !workshopsQuantityCookie
+    ? []
+    : parseJson(workshopsQuantityCookie);
+
+  const quantitiesToDisplay = workshopsQuantity.find((workshopQuantity) => {
+    return workshopQuantity.id === singleWorkshop.id;
+  });
+
   return (
     <div>
       <h1>{singleWorkshop.title}</h1>
@@ -33,6 +48,8 @@ export default function workshopPage(props) {
         {singleWorkshop.price} {singleWorkshop.currency}
       </div>
       <div>{singleWorkshop.description}</div>
+      <div>{quantitiesToDisplay?.quantity}</div>
+      <SetQuantityForm workshopId={singleWorkshop.id} />
     </div>
   );
 }

@@ -4,22 +4,22 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-export async function adaptCookie(workshopId, value) {
-  const quantitiesWorkshopCookie = getCookie('quantityCookie');
+export async function adaptCookie(workshopId, quantity) {
+  const workshopsQuantityCookie = getCookie('workshopsQuantity');
 
-  const quantitiesWorkshop = !quantitiesWorkshopCookie
+  const workshopsQuantity = !workshopsQuantityCookie
     ? []
-    : parseJson(quantitiesWorkshopCookie);
+    : parseJson(workshopsQuantityCookie);
 
-  const quantitiesToUpdate = quantitiesWorkshop.find((quantityWorkshop) => {
-    return quantityWorkshop.id === workshopId;
+  const workshopToAdd = workshopsQuantity.find((workshopQuantity) => {
+    return workshopQuantity.id === workshopId;
   });
 
-  if (!quantitiesToUpdate) {
-    quantitiesToUpdate.push({ id: workshopId, value: value });
+  if (!workshopToAdd) {
+    workshopsQuantity.push({ id: workshopId, quantity: quantity });
   } else {
-    quantitiesToUpdate.value = value;
+    workshopToAdd.quantity = quantity;
   }
 
-  await cookies().set('quantitiesWorkshop', JSON.stringify(quantitiesWorkshop));
+  await cookies().set('workshopsQuantity', JSON.stringify(workshopsQuantity));
 }

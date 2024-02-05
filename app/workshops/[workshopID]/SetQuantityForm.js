@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { adaptCookie } from './actions';
 
-export default function SetQuantityForm() {
+export default function SetQuantityForm(props) {
   const [quantity, setQuantity] = useState('');
   return (
     <div>
@@ -12,7 +12,9 @@ export default function SetQuantityForm() {
           value={quantity}
           onChange={(event) => setQuantity(event.currentTarget.value)}
         />
-        <button formAction={async () => await adaptCookie(quantity)}>
+        <button
+          formAction={async () => await adaptCookie(props.workshopId, quantity)}
+        >
           Add Quantity
         </button>
       </form>
