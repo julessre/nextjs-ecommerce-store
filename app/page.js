@@ -12,6 +12,7 @@ export default function Home() {
       {/* <div>
         <Products />
       </div> */}
+      SetCookieForm()
     </div>
   );
 }
