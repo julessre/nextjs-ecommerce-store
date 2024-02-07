@@ -13,6 +13,7 @@ export default function SetQuantityForm(props) {
           value={quantity}
           onChange={(event) => setQuantity(event.currentTarget.value)}
           className={styles.quantity}
+          data-test-id="product-quantity"
         >
           <option value="1">1</option>
           <option value="2">2</option>

@@ -1,18 +1,12 @@
 import './globals.scss';
 import React from 'react';
-
 // import Header from './_components/Header';
-
-// import Products from './products/[productID]/page';
+import styles from './page.module.scss';
 
 export default function Home() {
   return (
     <div>
       <div>{/* <Header /> */}</div>
-      {/* <div>
-        <Products />
-      </div> */}
-      SetCookieForm()
     </div>
   );
 }

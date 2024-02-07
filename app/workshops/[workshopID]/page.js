@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
+import { getCookie } from '../../../util/cookies';
+import { parseJson } from '../../../util/json';
 import { getWorkshop } from '../../database/database';
-import { getCookie } from '../../util/cookies';
-import { parseJson } from '../../util/json';
 import SetQuantityForm from './SetQuantityForm';
 import styles from './workshopPage.module.scss';
 
