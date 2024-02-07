@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { getWorkshops } from '../database/database';
+import { getWorkshopsInsecure } from '../../database/database';
 
 export const metadata = {
   title: 'Workshop page',
   description: 'This page shows all the upcoming workshops',
 };
 
-export default function WorkshopPage() {
-  const workshops = getWorkshops();
+export default async function WorkshopPage() {
+  const workshops = await getWorkshopsInsecure();
 
   return (
     <div>
@@ -34,8 +34,8 @@ export default function WorkshopPage() {
                 <div>
                   <h2>{workshop.title}</h2>
                 </div>
-                <div>{workshop.date}</div>
-                <div>{workshop.time}</div>
+                <div>{workshop.workshopDate}</div>
+                <div>{workshop.timeframe}</div>
                 <div data-test-id="product-price">{workshop.price}</div>
                 <div>{workshop.currency}</div>
               </Link>

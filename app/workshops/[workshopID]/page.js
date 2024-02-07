@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
+import { getWorkshopInsecure } from '../../../database/database';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
-import { getWorkshop } from '../../database/database';
 import SetQuantityForm from './SetQuantityForm';
 import styles from './workshopPage.module.scss';
 
 export function generateMetadata(props) {
-  const singleWorkshop = getWorkshop(Number(props.params.workshopID));
+  const singleWorkshop = getWorkshopInsecure(Number(props.params.workshopID));
 
   return {
     title: singleWorkshop?.title,
@@ -16,7 +16,7 @@ export function generateMetadata(props) {
 }
 
 export default function workshopPage(props) {
-  const singleWorkshop = getWorkshop(Number(props.params.workshopID));
+  const singleWorkshop = getWorkshopInsecure(Number(props.params.workshopID));
 
   if (!singleWorkshop) {
     notFound();
@@ -39,8 +39,8 @@ export default function workshopPage(props) {
       <div className={styles.contentBoxGrid}>
         <div>
           <div className={styles.textHighlight}>
-            <div>Date: {singleWorkshop.date}</div>
-            <div>Time: {singleWorkshop.time}</div>
+            <div>Date: {singleWorkshop.workshopDate}</div>
+            <div>Time: {singleWorkshop.timeframe}</div>
             <div>
               Price: {singleWorkshop.price} {singleWorkshop.currency}
             </div>
