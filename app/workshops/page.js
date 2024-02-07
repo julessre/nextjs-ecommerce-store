@@ -8,7 +8,7 @@ export const metadata = {
   description: 'This page shows all the upcoming workshops',
 };
 
-export default async function WorkshopPage() {
+export default async function WorkshopsPage() {
   const workshops = await getWorkshopsInsecure();
 
   return (
@@ -34,7 +34,7 @@ export default async function WorkshopPage() {
                 <div>
                   <h2>{workshop.title}</h2>
                 </div>
-                <div>{workshop.workshopDate}</div>
+                <div>{workshop.workshop_date}</div>
                 <div>{workshop.timeframe}</div>
                 <div data-test-id="product-price">{workshop.price}</div>
                 <div>{workshop.currency}</div>

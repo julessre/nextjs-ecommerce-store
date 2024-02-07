@@ -4,7 +4,7 @@ const workshops = [
   {
     id: 1,
     title: 'Ceramics plant press workshop',
-    workshopDate: '2024-02-07',
+    workshopDate: '07-02-2024',
     timeframe: '10:30 AM - 2:30 PM',
     location: 'string',
     category: 'workshop', // workshop or retreat
@@ -17,7 +17,7 @@ const workshops = [
   {
     id: 2,
     title: 'Yoga & Candles',
-    workshopDate: '2024-03-03',
+    workshopDate: '03-03-2024',
     timeframe: '10:30 AM - 2:30 PM',
     location: 'string',
     category: 'workshop', // workshop or retreat
@@ -30,7 +30,7 @@ const workshops = [
   {
     id: 3,
     title: 'Cacao Ceremony',
-    workshopDate: '2024-03-15',
+    workshopDate: '15-03-2024',
     timeframe: '6:30 PM - 8:30 PM',
     location: 'string',
     category: 'workshop', // workshop or retreat
@@ -43,7 +43,7 @@ const workshops = [
   {
     id: 4,
     title: 'Screen printing beginner',
-    workshopDate: '2024-03-21',
+    workshopDate: '21-03-2024',
     timeframe: '10:00 AM - 1:00 PM',
     location: 'string',
     category: 'workshop', // workshop or retreat

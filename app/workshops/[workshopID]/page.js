@@ -15,8 +15,10 @@ export function generateMetadata(props) {
   };
 }
 
-export default function workshopPage(props) {
-  const singleWorkshop = getWorkshopInsecure(Number(props.params.workshopID));
+export default async function workshopPage(props) {
+  const singleWorkshop = await getWorkshopInsecure(
+    Number(props.params.workshopID),
+  );
 
   if (!singleWorkshop) {
     notFound();
