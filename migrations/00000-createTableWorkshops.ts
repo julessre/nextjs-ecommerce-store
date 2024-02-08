@@ -9,7 +9,6 @@ export type Workshop = {
   category: string | null;
   image: string;
   price: number;
-  currency: string;
   description: string;
 };
 
@@ -24,7 +23,6 @@ export async function up(sql: Sql) {
  		category varchar(40),
  		image varchar(50) NOT NULL,
 		price integer NOT NULL,
- 		currency varchar(10) NOT NULL,
  		description varchar NOT NULL
 		)
 	`;

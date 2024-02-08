@@ -43,9 +43,7 @@ export default async function workshopPage(props) {
           <div className={styles.textHighlight}>
             <div>Date: {singleWorkshop.workshopDate}</div>
             <div>Time: {singleWorkshop.timeframe}</div>
-            <div>
-              Price: {singleWorkshop.price} {singleWorkshop.currency}
-            </div>
+            <div>Price: {singleWorkshop.price} €</div>
           </div>
           <div className={styles.description}>{singleWorkshop.description}</div>
         </div>
