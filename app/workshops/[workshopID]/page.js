@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { getWorkshopInsecure } from '../../../database/database';
+import { getWorkshopInsecure } from '../../../database/workshops';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import SetQuantityForm from './SetQuantityForm';

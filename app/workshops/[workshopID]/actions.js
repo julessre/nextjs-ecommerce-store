@@ -4,8 +4,8 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
-export async function adaptCookie(workshopId, quantity) {
-  const workshopsQuantityCookie = getCookie('workshopsQuantity');
+export async function addToCart(workshopId, quantity) {
+  const workshopsQuantityCookie = getCookie('cart');
 
   const workshopsQuantity = !workshopsQuantityCookie
     ? []
@@ -21,5 +21,5 @@ export async function adaptCookie(workshopId, quantity) {
     workshopToAdd.quantity = quantity;
   }
 
-  await cookies().set('workshopsQuantity', JSON.stringify(workshopsQuantity));
+  await cookies().set('cart', JSON.stringify(workshopsQuantity));
 }

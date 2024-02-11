@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { adaptCookie } from './actions';
+import { addToCart } from './actions';
 import styles from './workshopPage.module.scss';
 
 export default function SetQuantityForm(props) {
   const [quantity, setQuantity] = useState(1);
+
   return (
     <div>
       <form>
@@ -22,7 +23,7 @@ export default function SetQuantityForm(props) {
           <option value="5">5</option>
         </select>
         <button
-          formAction={async () => await adaptCookie(props.workshopId, quantity)}
+          formAction={async () => await addToCart(props.workshopId, quantity)}
         >
           Book Ticket
         </button>

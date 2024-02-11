@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
                 <a href="/">
                   <img src="./images/person.svg" alt="Account" />
                 </a>
-                <a href="/">
+                <a href="/cart">
                   <img src="./images/bag.svg" alt="shoppingcart" />
                 </a>
               </div>

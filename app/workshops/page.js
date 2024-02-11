@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { getWorkshopsInsecure } from '../../database/database';
+import { getWorkshopsInsecure } from '../../database/workshops';
 import styles from './page.module.scss';
 
 export const metadata = {
