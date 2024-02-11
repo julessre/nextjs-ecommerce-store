@@ -4,6 +4,7 @@ import React from 'react';
 import { getWorkshopsInsecure } from '../../database/workshops';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: { default: 'workshops' },
@@ -13,11 +14,11 @@ export const metadata = {
 export default async function CartPage() {
   const workshops = await getWorkshopsInsecure();
 
-  // to get the cookies
+  // get the cookies
   const cookie = getCookie('cart');
   const workshopCookies = !cookie ? [] : parseJson(cookie);
 
-  // to check which workshops are in cookies
+  // check which workshops are in cookies
   const workshopsWithCookies = workshops.map((workshop) => {
     const workshopFromCookies = workshopCookies.find(
       (workshopCookie) => workshop.id === workshopCookie.id,
@@ -25,41 +26,61 @@ export default async function CartPage() {
     return { ...workshop, quantity: workshopFromCookies?.quantity };
   });
 
+  // new variable with all products with quantity
   const workshopsInCart = workshopsWithCookies.filter(
     (workshop) => workshop.quantity,
   );
 
+  const totalPrice = workshopsInCart.reduce(
+    (accumulator, workshop) => accumulator + workshop.price * workshop.quantity,
+    0,
+  );
+
   return (
-    <div>
-      {workshopsInCart.map((workshop) => {
-        return (
-          <div key={`workshops-${workshop.id}`}>
-            <Link
-              href={`/workshops/${workshop.id}`}
-              data-test-id={`product-${workshop.id}`}
+    <div className={styles.sectionContainer}>
+      <h1>Your Cart:</h1>
+      <div className={styles.workshopContainer}>
+        {workshopsInCart.map((workshop) => {
+          return (
+            <div
+              key={`workshops-${workshop.id}`}
+              className={styles.workshopItem}
             >
-              <Image
-                src={workshop.image}
-                width={250}
-                height={300}
-                alt={workshop.title}
-              />
-              <div>
-                <div>
-                  <h2>{workshop.title}</h2>
+              <Link
+                href={`/workshops/${workshop.id}`}
+                data-test-id={`product-${workshop.id}`}
+              >
+                <Image
+                  src={workshop.image}
+                  width={250}
+                  height={300}
+                  alt={workshop.title}
+                  className={styles.workshopImage}
+                />
+                <div className={styles.workshopDetails}>
+                  <div className={styles.headline}>
+                    <h2>{workshop.title}</h2>
+                  </div>
+                  <div>
+                    <div>Date: {workshop.workshopDate}</div>
+                    <div>Time: {workshop.timeframe}</div>
+                    <div data-test-id="product-price">
+                      Price: € {workshop.price}
+                    </div>
+                    <div>Quantity: {workshop.quantity}</div>
+                    <div>
+                      Total costs for Workshop: €
+                      {workshop.price * workshop.quantity}
+                    </div>
+                  </div>
+                  <br />
                 </div>
-                <div>Date: {workshop.workshopDate}</div>
-                <div>Time: {workshop.timeframe}</div>
-                <div data-test-id="product-price">
-                  Price: € {workshop.price}
-                </div>
-                <div>Quantity: {workshop.quantity}</div>
-                <br />
-              </div>
-            </Link>
-          </div>
-        );
-      })}
+              </Link>
+            </div>
+          );
+        })}
+        <div className={styles.totalPrice}>Total Price: € {totalPrice}</div>
+      </div>
     </div>
   );
 }
