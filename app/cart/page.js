@@ -38,17 +38,17 @@ export default async function CartPage() {
 
   return (
     <div className={styles.sectionContainer}>
-      <h1>Your Cart:</h1>
+      <div>
+        <h1>Your Cart:</h1>
+      </div>
       <div className={styles.workshopContainer}>
         {workshopsInCart.map((workshop) => {
           return (
-            <div
-              key={`workshops-${workshop.id}`}
-              className={styles.workshopItem}
-            >
+            <div key={`workshops-${workshop.id}`}>
               <Link
                 href={`/workshops/${workshop.id}`}
                 data-test-id={`product-${workshop.id}`}
+                className={styles.workshopItem}
               >
                 <Image
                   src={workshop.image}
@@ -69,7 +69,7 @@ export default async function CartPage() {
                     </div>
                     <div>Quantity: {workshop.quantity}</div>
                     <div>
-                      Total costs for Workshop: €
+                      Total costs for Workshop: €{' '}
                       {workshop.price * workshop.quantity}
                     </div>
                   </div>
@@ -79,8 +79,9 @@ export default async function CartPage() {
             </div>
           );
         })}
-        <div className={styles.totalPrice}>Total Price: € {totalPrice}</div>
       </div>
+      <div className={styles.line} />
+      <div className={styles.totalPrice}>Total Price: € {totalPrice}</div>
     </div>
   );
 }
