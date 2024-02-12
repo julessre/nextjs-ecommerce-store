@@ -57,8 +57,24 @@
   }
 }
 
+.removeButton {
+  background-color: transparent;
+  border: 1px solid var(--color-button);
+  color: var(--secondary-color);
+  margin-top: 30px;
+  &:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-button);
+  }
+}
+
+.sectionCheckout {
+  justify-content: space-between;
+  display: flex;
+}
+
 .totalPrice {
-  font-family: var(--font-headline);
+  font-family: var(--font-family-text);
   color: var(--secondary-color);
   font-size: var(--h2-size);
   text-align: right;
@@ -70,16 +86,23 @@
 .line {
   display: block;
   border: 1px solid var(--secondary-color);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.removeButton {
-  background-color: transparent;
-  border: 1px solid var(--color-button);
-  color: var(--secondary-color);
-  margin-top: 30px;
+.checkoutButton {
+  background-color: var(--color-button);
+  color: white;
+  border-radius: 15px;
+  padding: 10px 15px;
+  border: 2px solid var(--color-button);
+  font-family: var(--font-family-text);
+  margin-top: 20px;
+  font-size: var(--h2-size);
+
   &:hover {
+    background-color: white;
+    border: 2px solid var(--color-button);
     cursor: pointer;
-    border: 1px solid var(--color-button);
+    color: var(--color-button);
   }
 }

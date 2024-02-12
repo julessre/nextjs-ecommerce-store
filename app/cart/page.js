@@ -91,8 +91,20 @@ export default async function CartPage() {
         })}
       </div>
       <div className={styles.line} />
-      <div className={styles.totalPrice} data-test-id="cart-total">
-        Total Price: € {totalPrice}
+      <div className={styles.sectionCheckout}>
+        <div className={styles.totalPrice} data-test-id="cart-total">
+          Total Price: € {totalPrice}
+        </div>
+        <div>
+          <Link
+            href="/checkout"
+            type="button"
+            data-test-id="cart-checkout"
+            className={styles.checkoutButton}
+          >
+            Checkout
+          </Link>
+        </div>
       </div>
     </div>
   );
