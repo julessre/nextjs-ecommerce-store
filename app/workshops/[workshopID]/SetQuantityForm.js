@@ -1,11 +1,13 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { addToCart } from './actions';
 import styles from './workshopPage.module.scss';
 
 export default function SetQuantityForm(props) {
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
 
   return (
     <div>
@@ -23,7 +25,10 @@ export default function SetQuantityForm(props) {
           <option value="5">5</option>
         </select>
         <button
-          formAction={async () => await addToCart(props.workshopId, quantity)}
+          formAction={async () => {
+            router.refresh();
+            await addToCart(props.workshopId, quantity);
+          }}
         >
           Book Ticket
         </button>

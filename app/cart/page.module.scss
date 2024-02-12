@@ -24,10 +24,9 @@
 }
 
 .workshopItem {
-  flex: 1 0 calc(50% - 20px);
+  flex: 1 0 calc(80% - 10px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   @media (max-width: 600px) {
     display: block;
     justify-content: center;
@@ -72,4 +71,15 @@
   display: block;
   border: 1px solid var(--secondary-color);
   margin-bottom: 20px;
+}
+
+.removeButton {
+  background-color: transparent;
+  border: 1px solid var(--color-button);
+  color: var(--secondary-color);
+  margin-top: 30px;
+  &:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-button);
+  }
 }

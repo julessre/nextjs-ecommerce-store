@@ -5,10 +5,11 @@ import { getWorkshopsInsecure } from '../../database/workshops';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
+import RemoveButton from './RemoveButton';
 
 export const metadata = {
-  title: { default: 'workshops' },
-  description: 'Creating memorable workshop experiences',
+  title: { default: 'Cart Page' },
+  description: 'Cart Pages is showing all selected workshops',
 };
 
 export default async function CartPage() {
@@ -44,11 +45,14 @@ export default async function CartPage() {
       <div className={styles.workshopContainer}>
         {workshopsInCart.map((workshop) => {
           return (
-            <div key={`workshops-${workshop.id}`}>
+            <div
+              key={`workshops-${workshop.id}`}
+              data-test-id={`cart-product-${workshop.id}`}
+              className={styles.workshopItem}
+            >
               <Link
                 href={`/workshops/${workshop.id}`}
                 data-test-id={`product-${workshop.id}`}
-                className={styles.workshopItem}
               >
                 <Image
                   src={workshop.image}
@@ -57,31 +61,39 @@ export default async function CartPage() {
                   alt={workshop.title}
                   className={styles.workshopImage}
                 />
-                <div className={styles.workshopDetails}>
-                  <div className={styles.headline}>
-                    <h2>{workshop.title}</h2>
+              </Link>
+              <div className={styles.workshopDetails}>
+                <div className={styles.headline}>
+                  <h2>{workshop.title}</h2>
+                </div>
+                <div>
+                  <div>Date: {workshop.workshopDate}</div>
+                  <div>Time: {workshop.timeframe}</div>
+                  <div data-test-id="product-price">
+                    Price: € {workshop.price}
+                  </div>
+                  <div data-test-id={`cart-product-quantity-${workshop.id}`}>
+                    Quantity: {workshop.quantity}
                   </div>
                   <div>
-                    <div>Date: {workshop.workshopDate}</div>
-                    <div>Time: {workshop.timeframe}</div>
-                    <div data-test-id="product-price">
-                      Price: € {workshop.price}
-                    </div>
-                    <div>Quantity: {workshop.quantity}</div>
-                    <div>
-                      Total costs for Workshop: €{' '}
-                      {workshop.price * workshop.quantity}
-                    </div>
+                    Total costs for Workshop: €{' '}
+                    {workshop.price * workshop.quantity}
                   </div>
-                  <br />
                 </div>
-              </Link>
+                <div data-test-id={`cart-product-remove-${workshop.id}`}>
+                  <RemoveButton workshop={workshop} />
+                </div>
+                <br />
+              </div>
+              {/* </Link> */}
             </div>
           );
         })}
       </div>
       <div className={styles.line} />
-      <div className={styles.totalPrice}>Total Price: € {totalPrice}</div>
+      <div className={styles.totalPrice} data-test-id="cart-total">
+        Total Price: € {totalPrice}
+      </div>
     </div>
   );
 }
