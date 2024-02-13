@@ -1,14 +1,16 @@
 import './globals.scss';
 import React from 'react';
-// import Header from './_components/Header';
+import Header from './_components/Header';
+import WorkshopOverivew from './_components/WorkshopOverview';
 import styles from './page.module.scss';
 
 export default function Home() {
   return (
     <div>
-      <div>{/* <Header /> */}</div>
+      <div>
+        <Header />
+        <WorkshopOverivew />
+      </div>
     </div>
   );
 }
-
-// hero image source: https://www.fzeenretreats.com/kefalonia/wellbeing/yoga-pilates/

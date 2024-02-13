@@ -1,5 +1,7 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { clearCookies } from './actions';
 import styles from './checkoutPage.module.scss';
 
 export default function CheckoutPage() {
@@ -14,8 +16,10 @@ export default function CheckoutPage() {
   const [expirationDate, setExpirationDate] = useState('');
   const [securityCode, setSecurityCode] = useState('');
 
+  const router = useRouter();
+
   return (
-    <div className={styles.sectionContainer}>
+    <div>
       <div className={styles.form}>
         <h2 className={styles.headline}>Contact Information</h2>
         <div className={styles.smallContainer}>
@@ -163,6 +167,18 @@ export default function CheckoutPage() {
               </label>
             </div>
           </div>
+        </div>
+        <div className={styles.buttonContainer}>
+          <button
+            data-test-id="checkout-confirm-order"
+            onClick={async () => {
+              await clearCookies();
+              router.refresh();
+              router.push('/checkout/thankyou');
+            }}
+          >
+            Confirm Order
+          </button>
         </div>
       </div>
     </div>

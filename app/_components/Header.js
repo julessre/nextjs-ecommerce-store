@@ -7,19 +7,26 @@ export default function Header() {
     <div>
       <img src="/images/hero-image.jpg" alt="yoga place" />
       <h1 className="text-on-image">
-        Immerse Yourself: Elevate Your Being at our magical location
+        Immerse Yourself: Nurture Your Mind, Body and Soul
       </h1>
       <div className="sectionContainer">
         <div className="sectionHeader">
-          <h2>Headline 2 nettes intro</h2>
+          <h2>
+            Our workshops are a mix of creativity, movement, meditation and
+            self-discovery.
+          </h2>
         </div>
         <p>
-          Consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-          consectetur, adipisci velit, sed quia non numquam. Consequuntur magni
-          dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-          quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-          adipisci velit, sed quia non numquam.
+          Welcome to our sanctuary of wellness and discovery, where every moment
+          is an invitation to reconnect with yourself and the world around you.
+          We believe in the transformative power of immersive experiences that
+          nourish the mind, body, and soul. Step into a realm where ancient
+          practices meet modern wisdom, where the gentle embrace of yoga, the
+          sacred ritual of cacao ceremonies, and the therapeutic art of clay
+          work harmonize to guide you on a journey of self-discovery and inner
+          harmony. Whether you seek to deepen your spiritual connection,
+          rejuvenate your body, or simply find solace in the present moment, our
+          workshops offer a sanctuary for exploration, growth, and renewal.
         </p>
       </div>
     </div>

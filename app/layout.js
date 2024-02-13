@@ -38,9 +38,6 @@ export default function RootLayout({ children }) {
                 Contact
               </Link>
               <div className="icon">
-                <a href="/">
-                  <img src="./images/person.svg" alt="Account" />
-                </a>
                 <a href="/cart">
                   <img src="./images/bag.svg" alt="shoppingcart" />
                 </a>
