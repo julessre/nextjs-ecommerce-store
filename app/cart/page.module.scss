@@ -106,3 +106,19 @@
     color: var(--color-button);
   }
 }
+
+.changeQuantity {
+  padding: 5px;
+  color: var(--primary-color);
+  background-color: transparent;
+  border: none transparent;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 1000;
+  margin-left: 4px;
+
+  &:hover {
+    border: none transparent;
+    background-color: transparent;
+  }
+}

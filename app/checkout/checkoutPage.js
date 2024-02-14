@@ -24,7 +24,7 @@ export default function CheckoutPage() {
         <h2 className={styles.headline}>Contact Information</h2>
         <div className={styles.smallContainer}>
           <div>
-            <label>
+            <label aria-label="First Name">
               <input
                 name="firstName"
                 data-test-id="checkout-first-name"
@@ -37,7 +37,7 @@ export default function CheckoutPage() {
             </label>
           </div>
           <div>
-            <label>
+            <label aria-label="Last Name">
               <input
                 name="lastName"
                 data-test-id="checkout-last-name"
@@ -51,7 +51,7 @@ export default function CheckoutPage() {
           </div>
         </div>
         <div>
-          <label>
+          <label aria-label="email">
             <input
               name="email"
               data-test-id="checkout-email"
@@ -66,7 +66,7 @@ export default function CheckoutPage() {
         <div>
           <h2 className={styles.headline}>Shipping Information</h2>
           <div>
-            <label>
+            <label aria-label="Address">
               <input
                 name="address"
                 data-test-id="checkout-address"
@@ -80,7 +80,7 @@ export default function CheckoutPage() {
           </div>
           <div className={styles.smallContainer}>
             <div>
-              <label>
+              <label aria-label="City">
                 <input
                   name="city"
                   data-test-id="checkout-city"
@@ -93,7 +93,7 @@ export default function CheckoutPage() {
               </label>
             </div>
             <div>
-              <label>
+              <label aria-label="Postal Code">
                 <input
                   name="postalCode"
                   data-test-id="checkout-postal-code"
@@ -107,7 +107,7 @@ export default function CheckoutPage() {
             </div>
           </div>
           <div>
-            <label>
+            <label aria-label="Country">
               <input
                 name="country"
                 data-test-id="checkout-country"
@@ -123,7 +123,7 @@ export default function CheckoutPage() {
         <div>
           <h2 className={styles.headline}>Payment Information</h2>
           <div>
-            <label>
+            <label aria-label="Credit Card Number">
               <input
                 name="creditCard"
                 data-test-id="checkout-credit-card"
@@ -137,7 +137,7 @@ export default function CheckoutPage() {
           </div>
           <div className={styles.smallContainer}>
             <div>
-              <label>
+              <label aria-label="Expiration Date">
                 <input
                   name="expirationDate"
                   data-test-id="checkout-expiration-date"
@@ -152,7 +152,7 @@ export default function CheckoutPage() {
               </label>
             </div>
             <div>
-              <label>
+              <label aria-label="Security Code">
                 <input
                   name="securityCode"
                   data-test-id="checkout-security-code"

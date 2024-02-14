@@ -4,6 +4,7 @@ import React from 'react';
 import { getWorkshopsInsecure } from '../../database/workshops';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import ChangeQuantity from './ChangeQuantity';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
@@ -73,7 +74,7 @@ export default async function CartPage() {
                     Price: € {workshop.price}
                   </div>
                   <div data-test-id={`cart-product-quantity-${workshop.id}`}>
-                    Quantity: {workshop.quantity}
+                    <ChangeQuantity workshop={workshop} />
                   </div>
                   <div>
                     Total costs for Workshop: €{' '}

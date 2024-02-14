@@ -27,7 +27,7 @@ export default function SetQuantityForm(props) {
         <button
           formAction={async () => {
             router.refresh();
-            await addToCart(props.workshopId, quantity);
+            await addToCart(props.workshopId, Number(quantity));
           }}
         >
           Book Ticket
