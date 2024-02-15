@@ -4,7 +4,7 @@ import React from 'react';
 import { getWorkshopsInsecure } from '../../database/workshops';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import ChangeQuantity from './ChangeQuantity';
+import ChangeQuantity from './ChangeQuantity.tsx';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 

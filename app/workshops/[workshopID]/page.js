@@ -4,14 +4,14 @@ import React from 'react';
 import { getWorkshopInsecure } from '../../../database/workshops';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
-import SetQuantityForm from './SetQuantityForm';
+import SetQuantityForm from './SetQuantityForm.tsx';
 import styles from './workshopPage.module.scss';
 
 export function generateMetadata(props) {
   const singleWorkshop = getWorkshopInsecure(Number(props.params.workshopID));
 
   return {
-    title: singleWorkshop?.title,
+    title: singleWorkshop.title,
   };
 }
 

@@ -1,17 +1,23 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import { addQuantity, reduceQuantity } from './actions';
+import { addQuantity, reduceQuantity } from './actions.js';
 import styles from './page.module.scss';
 
-export default function ChangeQuantity(props) {
+type Props = {
+  workshop: {
+    quantity: number;
+  };
+};
+
+export default function ChangeQuantity(props: Props) {
   const router = useRouter();
 
   return (
     <form>
       Quantity: {props.workshop.quantity}
       <button
-        className={styles.changeQuantity}
+        className={styles.changeQuantityPlus}
         formAction={async () => {
           router.refresh();
           await addQuantity(props.workshop);
@@ -20,7 +26,7 @@ export default function ChangeQuantity(props) {
         +
       </button>
       <button
-        className={styles.changeQuantity}
+        className={styles.changeQuantityMinus}
         formAction={async () => {
           router.refresh();
           await reduceQuantity(props.workshop);

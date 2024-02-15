@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import removeItem from './actions';
+import removeItem from './actions.js';
 import styles from './page.module.scss';
 
 export default function RemoveButton({ workshop }) {

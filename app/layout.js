@@ -1,6 +1,7 @@
 import './globals.scss';
 import Link from 'next/link';
 import React from 'react';
+import CartBadge from './cart/CartBadge';
 
 export const metadata = {
   title: {
@@ -26,7 +27,11 @@ export default function RootLayout({ children }) {
                 Home
               </Link>
 
-              <Link href="/workshops" className="navText">
+              <Link
+                href="/workshops"
+                className="navText"
+                data-test-id="products-link"
+              >
                 Workshops
               </Link>
 
@@ -37,8 +42,9 @@ export default function RootLayout({ children }) {
               <Link href="/contact" className="navText">
                 Contact
               </Link>
-              <div className="icon">
+              <div className="icon" data-test-id="cart-link">
                 <a href="/cart">
+                  <CartBadge />
                   <img src="./images/bag.svg" alt="shoppingcart" />
                 </a>
               </div>
@@ -46,8 +52,6 @@ export default function RootLayout({ children }) {
           </div>
         </header>
         <main>{children}</main>
-
-        <footer>Hello Footer</footer>
       </body>
     </html>
   );

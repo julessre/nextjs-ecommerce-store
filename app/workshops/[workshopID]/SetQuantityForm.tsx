@@ -5,7 +5,11 @@ import React, { useState } from 'react';
 import { addToCart } from './actions';
 import styles from './workshopPage.module.scss';
 
-export default function SetQuantityForm(props) {
+type Props = {
+  workshopId: number;
+};
+
+export default function SetQuantityForm(props: Props) {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
@@ -14,7 +18,7 @@ export default function SetQuantityForm(props) {
       <form>
         <select
           value={quantity}
-          onChange={(event) => setQuantity(event.currentTarget.value)}
+          onChange={(event) => setQuantity(Number(event.currentTarget.value))}
           className={styles.quantity}
           data-test-id="product-quantity"
         >

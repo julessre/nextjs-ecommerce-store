@@ -5,11 +5,11 @@ import { getWorkshopsInsecure } from '../../database/workshops';
 import styles from './workshopoverview.module.scss';
 
 export const metadata = {
-  title: 'Workshop page',
+  title: 'Workshop Overview page',
   description: 'This page shows all the upcoming workshops',
 };
 
-export default async function WorkshopOverivew() {
+export default async function WorkshopOverview() {
   const workshops = await getWorkshopsInsecure();
 
   return (
