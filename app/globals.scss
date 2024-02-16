@@ -1,5 +1,5 @@
 // Supports weights 200-900
-@import '@fontsource-variable/nunito';
+// @import '@fontsource-variable/nunito';
 
 :root {
   --max-width: 1100px;
@@ -9,8 +9,8 @@
   --color-button: #5c40c8;
   --primary-color: #ec682d;
   --secondary-color: #5c40c8;
-  --font-family-headline: @font-face{font-family: cyrene; src=url (Cyrene.otf)}
-   --text-size: 20px;
+  --font-family-headline: @font-face{font-family: cyrene; src=url (Cyrene.otf)};
+  --text-size: 20px;
   --h2-size: 24px;
 }
 
@@ -40,9 +40,7 @@ h2 {
 
 header {
   position: sticky;
-
 }
-
 
 nav {
   font-family: var(--font-family-text);
@@ -54,33 +52,27 @@ nav {
   display: flex;
   align-items: center;
 
-.navText {
-
-   align-items: center;
+  .navText {
+    align-items: center;
     display: flex;
-}
+  }
 
   .logo {
-      width: 2rem;
-      opacity: 1;
-      margin-right: 1rem;
-
-}
- .icon {
-   opacity: 1;
-   margin-left: 10rem;
-   display: flex;
-   align-items: center;
-
+    width: 2rem;
+    opacity: 1;
+    margin-right: 1rem;
+  }
+  .icon {
+    opacity: 1;
+    margin-left: 10rem;
+    display: flex;
+    align-items: center;
   }
   .icon a {
-  width: 2rem;
-  margin-left: 1rem;
-
+    width: 2rem;
+    margin-left: 1rem;
+  }
 }
-
-}
-
 
 // body {
 //   color: rgb(var(--foreground-rgb));
@@ -106,10 +98,10 @@ button {
   font-family: var(--font-family-text);
 
   &:hover {
-  background-color: white;
-  border: 2px solid var(--color-button);
-  cursor: pointer;
-  color: var(--color-button);
+    background-color: white;
+    border: 2px solid var(--color-button);
+    cursor: pointer;
+    color: var(--color-button);
   }
 }
 
