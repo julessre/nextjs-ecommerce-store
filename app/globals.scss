@@ -72,6 +72,28 @@ nav {
     width: 2rem;
     margin-left: 1rem;
   }
+
+  @media screen and (max-width: 500px) {
+    .nav {
+      display: block;
+      position: relative;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon {
+      display: inline-block;
+      margin-left: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: -10px;
+    }
+
+    .logo {
+      font-size: 1rem;
+    }
+  }
 }
 
 // body {

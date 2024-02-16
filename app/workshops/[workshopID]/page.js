@@ -7,11 +7,6 @@ import { parseJson } from '../../../util/json';
 import SetQuantityForm from './SetQuantityForm.tsx';
 import styles from './workshopPage.module.scss';
 
-export const metadata = {
-  title: 'Single Workshop page',
-  description: 'This page shows one single workshop in detail',
-};
-
 export function generateMetadata(props) {
   const singleWorkshop = getWorkshopInsecure(Number(props.params.workshopID));
 

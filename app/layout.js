@@ -39,9 +39,9 @@ export default function RootLayout({ children }) {
                 About
               </Link>
 
-              <Link href="/contact" className="navText">
+              {/* <Link href="/contact" className="navText">
                 Contact
-              </Link>
+              </Link> */}
               <div className="icon" data-test-id="cart-link">
                 <a href="/cart">
                   <CartBadge />

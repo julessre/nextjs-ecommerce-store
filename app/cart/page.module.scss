@@ -5,7 +5,7 @@
   width: 1140px;
 
   @media (max-width: 600px) {
-    padding: 20px;
+    padding: 30px;
   }
 }
 
@@ -71,6 +71,12 @@
 .sectionCheckout {
   justify-content: space-between;
   display: flex;
+
+  @media (max-width: 1080px) {
+    width: 30%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .totalPrice {
@@ -78,8 +84,14 @@
   color: var(--secondary-color);
   font-size: var(--h2-size);
   text-align: right;
-  @media (max-width: 600px) {
-    width: 20em;
+  @media (max-width: 1080px) {
+    width: 100%;
+    display: flex;
+    justify-items: left;
+    padding-bottom: 30px;
+    text-align: center;
+    margin-right: 30px;
+    margin-bottom: 20px;
   }
 }
 
@@ -87,6 +99,11 @@
   display: block;
   border: 1px solid var(--secondary-color);
   margin-bottom: 30px;
+  width: 100%;
+  @media (max-width: 1080px) {
+    width: 50%;
+    display: flex;
+  }
 }
 
 .checkoutButton {
@@ -104,6 +121,10 @@
     border: 2px solid var(--color-button);
     cursor: pointer;
     color: var(--color-button);
+  }
+  @media (max-width: 1080px) {
+    width: 100%;
+    display: inline;
   }
 }
 
