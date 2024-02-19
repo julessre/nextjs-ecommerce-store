@@ -83,9 +83,9 @@ export async function up(sql: Sql) {
 export async function down(sql: Sql) {
   for (const workshop of workshops) {
     await sql`
-    DELETE FROM workshops
-    WHERE
-      id = ${workshop.id}
-      `;
+      DELETE FROM workshops
+      WHERE
+        id = ${workshop.id}
+    `;
   }
 }

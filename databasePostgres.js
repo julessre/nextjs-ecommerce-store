@@ -7,9 +7,9 @@ const sql = postgres();
 
 console.log(
   await sql`
-  SELECT
-    *
+    SELECT
+      *
     FROM
-    workshops
-    `,
+      workshops
+  `,
 );

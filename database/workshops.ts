@@ -5,10 +5,10 @@ import { sql } from './connect';
 export const getWorkshopsInsecure = cache(async () => {
   const workshops = await sql<Workshop[]>`
     SELECT
-    *
+      *
     FROM
-    workshops
-    `;
+      workshops
+  `;
 
   return workshops;
 });

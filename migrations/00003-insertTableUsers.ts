@@ -16,8 +16,8 @@ export async function up(sql: Sql) {
     await sql`
       INSERT INTO
         users (
-          firstName,
-          lastName,
+          firstname,
+          lastname,
           address,
           postcode,
           mail
@@ -37,9 +37,9 @@ export async function up(sql: Sql) {
 export async function down(sql: Sql) {
   for (const user of users) {
     await sql`
-    DELETE FROM users
-    WHERE
-      id = ${user.id}
-      `;
+      DELETE FROM users
+      WHERE
+        id = ${user.id}
+    `;
   }
 }
