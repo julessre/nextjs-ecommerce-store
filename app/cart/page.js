@@ -45,6 +45,9 @@ export default async function CartPage() {
       </div>
       <div className={styles.workshopContainer}>
         {workshopsInCart.map((workshop) => {
+          const workshopSubTotal = () => {
+            return Number(workshop.quantity) * Number(workshop.price);
+          };
           return (
             <div
               key={`workshops-${workshop.id}`}
@@ -75,10 +78,7 @@ export default async function CartPage() {
                   >
                     <ChangeQuantity workshop={workshop} />
                   </div>
-                  <div>
-                    Total costs for Workshop: €{' '}
-                    {workshop.price * workshop.quantity}
-                  </div>
+                  <div>Total costs for Workshop: € {workshopSubTotal()}</div>
                 </div>
                 <div
                   data-test-id={`cart-product-remove-${Number(workshop.id)}`}
