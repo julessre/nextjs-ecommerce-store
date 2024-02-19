@@ -48,13 +48,10 @@ export default async function CartPage() {
           return (
             <div
               key={`workshops-${workshop.id}`}
-              data-test-id={`cart-product-${workshop.id}`}
+              data-test-id={`cart-product-${Number(workshop.id)}`}
               className={styles.workshopItem}
             >
-              <Link
-                href={`/workshops/${workshop.id}`}
-                data-test-id={`product-${workshop.id}`}
-              >
+              <Link href={`/workshops/${workshop.id}`}>
                 <Image
                   src={workshop.image}
                   width={250}
@@ -73,7 +70,9 @@ export default async function CartPage() {
                   <div data-test-id="product-price">
                     Price: € {workshop.price}
                   </div>
-                  <div data-test-id={`cart-product-quantity-${workshop.id}`}>
+                  <div
+                    data-test-id={`cart-product-quantity-${Number(workshop.id)}`}
+                  >
                     <ChangeQuantity workshop={workshop} />
                   </div>
                   <div>
@@ -81,7 +80,9 @@ export default async function CartPage() {
                     {workshop.price * workshop.quantity}
                   </div>
                 </div>
-                <div data-test-id={`cart-product-remove-${workshop.id}`}>
+                <div
+                  data-test-id={`cart-product-remove-${Number(workshop.id)}`}
+                >
                   <RemoveButton workshop={workshop} />
                 </div>
                 <br />
