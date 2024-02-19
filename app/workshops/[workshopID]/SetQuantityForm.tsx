@@ -16,18 +16,20 @@ export default function SetQuantityForm(props: Props) {
   return (
     <div>
       <form>
-        <select
+        <input
           value={quantity}
           onChange={(event) => setQuantity(Number(event.currentTarget.value))}
           className={styles.quantity}
+          type="number"
+          min={1}
           data-test-id="product-quantity"
-        >
-          <option value="1">1</option>
+        />
+        {/* <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+          <option value="5">5</option> */}
+        {/* </input> */}
         <button
           formAction={async () => {
             router.refresh();
