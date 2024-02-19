@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: 'About page',
@@ -6,5 +7,9 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  return <div>This is my about page</div>;
+  return (
+    <div className={styles.sectionContainer}>
+      <h1 className={styles.headline}>This is my about page</h1>
+    </div>
+  );
 }

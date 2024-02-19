@@ -1,5 +1,5 @@
 // Supports weights 200-900
-// @import '@fontsource-variable/nunito';
+@import '@fontsource-variable/nunito';
 
 :root {
   --max-width: 1100px;
@@ -9,9 +9,14 @@
   --color-button: #5c40c8;
   --primary-color: #ec682d;
   --secondary-color: #5c40c8;
-  --font-family-headline: @font-face{font-family: cyrene; src=url (Cyrene.otf)};
+  --font-family-headline: cyrene;
   --text-size: 20px;
   --h2-size: 24px;
+}
+
+@font-face {
+  font-family: cyrene;
+  src: url('./_assets/Cyrene.otf');
 }
 
 // @media (prefers-color-scheme: dark) {

@@ -4,7 +4,11 @@ import React from 'react';
 export default function Header() {
   return (
     <div>
-      <img src="/images/hero-image.jpg" alt="yoga place" />
+      <img
+        src="/images/hero-image.jpg"
+        alt="yoga place"
+        className="headerImage"
+      />
       <h1 className="text-on-image">
         Immerse Yourself: Nurture Your Mind, Body and Soul
       </h1>

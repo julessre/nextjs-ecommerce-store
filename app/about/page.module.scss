@@ -1,0 +1,23 @@
+.sectionContainer {
+  width: 1140px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px;
+  }
+}
+
+.headline {
+  font-family: var(--font-headline);
+  padding-top: 20px;
+}
