@@ -41,7 +41,8 @@ export default async function WorkshopsPage() {
                     <div>Date: {workshop.workshopDate}</div>
                     <div>Time: {workshop.timeframe}</div>
                     <div data-test-id="product-price">
-                      Price: € {workshop.price}
+                      Price: €{' '}
+                      <span data-test-id="product-price">{workshop.price}</span>
                     </div>
                     <br />
                     <div>
