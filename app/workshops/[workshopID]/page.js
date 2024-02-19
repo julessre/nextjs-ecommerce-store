@@ -40,11 +40,14 @@ export default async function workshopPage(props) {
       <h1 className={styles.h1}>{singleWorkshop.title}</h1>
       <div className={styles.contentBoxGrid}>
         <div>
-          < className={styles.textHighlight}>
+          <div className={styles.textHighlight}>
             <div>Date: {singleWorkshop.workshopDate}</div>
             <div>Time: {singleWorkshop.timeframe}</div>
-            <div data-test-id="product-price"> Price: {singleWorkshop.price} €</div>
-
+            <div>
+              Price:{' '}
+              <span data-test-id="product-price">{singleWorkshop.price}</span> €
+            </div>
+          </div>
           <div className={styles.description}>{singleWorkshop.description}</div>
         </div>
         <div>
