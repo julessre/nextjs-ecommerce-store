@@ -31,6 +31,7 @@ export default function SetQuantityForm(props: Props) {
           <option value="5">5</option> */}
         {/* </input> */}
         <button
+          data-test-id="product-add-to-cart"
           formAction={async () => {
             router.refresh();
             await addToCart(props.workshopId, Number(quantity));
