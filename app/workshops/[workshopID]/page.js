@@ -7,11 +7,11 @@ import { parseJson } from '../../../util/json';
 import SetQuantityForm from './SetQuantityForm.tsx';
 import styles from './workshopPage.module.scss';
 
-export function generateMetadata(props) {
-  const singleWorkshop = getWorkshopInsecure(Number(props.params.workshopID));
+export async function generateMetadata(props) {
+  const singleWorkshop = await getWorkshopInsecure(props.params.workshopID);
 
   return {
-    title: singleWorkshop.title,
+    title: singleWorkshop?.title,
   };
 }
 
