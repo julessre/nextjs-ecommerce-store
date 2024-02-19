@@ -34,7 +34,7 @@ p {
     // left: 15%;
     // right: 30%;
     // bottom: 30%;
-    top: 15%;
+    top: 20%;
     padding: 20px;
     padding-bottom: 0px;
     transform: inherit; /* Center horizontally */
@@ -51,9 +51,17 @@ p {
   text-align: left;
   display: block;
   max-width: 1000px;
+
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
 }
 
 .sectionHeader {
   width: 80vw;
   margin: 50px auto;
+
+  @media screen and (max-width: 600px) {
+    margin: 25px auto;
+  }
 }

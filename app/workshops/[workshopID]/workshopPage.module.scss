@@ -34,6 +34,21 @@
     color: var(--secondary-color);
     font-family: var(--font-family-text);
   }
+
+  .quantity {
+    font-family: var(--font-family-text);
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--color-button);
+    color: var(--color-button);
+
+    &:hover {
+      background-color: white;
+      cursor: pointer;
+      color: var(--color-button);
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -57,29 +72,29 @@
     margin: auto;
   }
   .textHighlight {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 20px;
     line-height: 130%;
     color: var(--secondary-color);
     font-family: var(--font-family-text);
   }
+
+  .quantity {
+    font-family: var(--font-family-text);
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--color-button);
+    color: var(--color-button);
+
+    &:hover {
+      background-color: white;
+      cursor: pointer;
+      color: var(--color-button);
+    }
+  }
 }
 
 .bookTicketWrapper {
   margin: 20px;
-}
-
-.quantity {
-  font-family: var(--font-family-text);
-  margin-right: 20px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  border: 2px solid var(--color-button);
-  color: var(--color-button);
-
-  &:hover {
-    background-color: white;
-    cursor: pointer;
-    color: var(--color-button);
-  }
 }
