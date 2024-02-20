@@ -31,7 +31,7 @@
     "eslint-config-upleveled": "^7.8.0",
     "jest": "^29.7.0",
     "prettier": "^3.2.5",
-    "prettier-plugin-embed": "^0.4.13",
+    "prettier-plugin-embed": "^0.4.14",
     "prettier-plugin-sql": "^0.18.0",
     "stylelint": "^16.2.0",
     "stylelint-config-upleveled": "^1.0.7",

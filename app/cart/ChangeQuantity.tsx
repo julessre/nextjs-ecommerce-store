@@ -7,6 +7,7 @@ import styles from './page.module.scss';
 type Props = {
   workshop: {
     quantity: number;
+    id: number;
   };
 };
 
@@ -15,7 +16,9 @@ export default function ChangeQuantity(props: Props) {
 
   return (
     <form>
-      Quantity: {props.workshop.quantity}
+      <span data-test-id={`cart-product-quantity-${props.workshop.id}`}>
+        Quantity: {props.workshop.quantity}{' '}
+      </span>
       <button
         className={styles.changeQuantityPlus}
         formAction={async () => {
