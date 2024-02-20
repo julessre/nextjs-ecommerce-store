@@ -3,7 +3,7 @@ import { Sql } from 'postgres';
 export type Workshop = {
   id: number;
   title: string;
-  workshop_date: string;
+  workshopDate: string;
   timeframe: string;
   location: string | null;
   category: string | null;
