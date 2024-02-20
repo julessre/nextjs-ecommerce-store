@@ -73,9 +73,7 @@ export default async function CartPage() {
                   <div data-test-id="product-price">
                     Price: € {workshop.price}
                   </div>
-                  <div
-                    data-test-id={`cart-product-quantity-${Number(workshop.id)}`}
-                  >
+                  <div>
                     <ChangeQuantity workshop={workshop} />
                   </div>
                   <div>Total costs for Workshop: € {workshopSubTotal()}</div>
@@ -94,8 +92,8 @@ export default async function CartPage() {
       </div>
       <div className={styles.line} />
       <div className={styles.sectionCheckout}>
-        <div className={styles.totalPrice} data-test-id="cart-total">
-          Total Price: € {totalPrice}
+        <div className={styles.totalPrice}>
+          Total Price: € <span data-test-id="cart-total">{totalPrice}</span>
         </div>
         <div>
           <Link
