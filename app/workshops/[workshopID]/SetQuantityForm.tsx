@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function SetQuantityForm(props: Props) {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState('1');
   const router = useRouter();
 
   return (
@@ -18,10 +18,10 @@ export default function SetQuantityForm(props: Props) {
       <form>
         <input
           value={quantity}
-          onChange={(event) => setQuantity(Number(event.currentTarget.value))}
+          onChange={(event) => setQuantity(event.currentTarget.value)}
           className={styles.quantity}
           type="number"
-          min={1}
+          min="1"
           data-test-id="product-quantity"
         />
         {/* <option value="1">1</option>
