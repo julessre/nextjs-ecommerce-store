@@ -16,8 +16,10 @@ export default function ChangeQuantity(props: Props) {
 
   return (
     <form>
+      Quantity:
       <span data-test-id={`cart-product-quantity-${props.workshop.id}`}>
-        Quantity: {props.workshop.quantity}{' '}
+        {' '}
+        {props.workshop.quantity}{' '}
       </span>
       <button
         className={styles.changeQuantityPlus}
