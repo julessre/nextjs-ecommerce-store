@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Thank you page',
+  title: 'Thank you for your order',
   description: 'This page appears after a successful order',
 };
 
