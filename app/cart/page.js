@@ -78,9 +78,7 @@ export default async function CartPage() {
                   </div>
                   <div>Total costs for Workshop: € {workshopSubTotal()}</div>
                 </div>
-                <div
-                  data-test-id={`cart-product-remove-${Number(workshop.id)}`}
-                >
+                <div>
                   <RemoveButton workshop={workshop} />
                 </div>
                 <br />

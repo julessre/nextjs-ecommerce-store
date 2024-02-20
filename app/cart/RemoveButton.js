@@ -14,7 +14,11 @@ export default function RemoveButton({ workshop }) {
 
   return (
     <div>
-      <button onClick={handleRemoveItem} className={styles.removeButton}>
+      <button
+        onClick={handleRemoveItem}
+        className={styles.removeButton}
+        data-test-id={`cart-product-remove-${Number(workshop.id)}`}
+      >
         Remove Workshop
       </button>
     </div>
