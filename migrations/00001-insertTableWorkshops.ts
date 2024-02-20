@@ -57,7 +57,7 @@ export async function up(sql: Sql) {
       INSERT INTO
         workshops (
           title,
-          workshopdate,
+          workshop_date,
           timeframe,
           location,
           category,
