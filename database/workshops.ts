@@ -14,7 +14,6 @@ export const getWorkshopsInsecure = cache(async () => {
 });
 
 export const getWorkshopInsecure = cache(async (id: number) => {
-  // Postgres always returns an array
   const [workshop] = await sql<Workshop[]>`
     SELECT
       *
