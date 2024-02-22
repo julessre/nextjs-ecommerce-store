@@ -23,8 +23,15 @@ Main features are:
 
 <h2>Screenshots 📷</h2>
 
+<h3>Final Look </h3>
 <p align="left">
   <img src="./public/images/readme.jpg" width="800" alt="homepage">
+</p>
+
+<h3>Prototype on Figma</h3>
+
+<p align="left">
+  <img src="./public/images/mockup-homepage.png" height="400" alt="homepage">
 </p>
 
 <h2>Setup 💻</h2>
