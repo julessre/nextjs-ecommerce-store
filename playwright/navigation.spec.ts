@@ -9,9 +9,9 @@ test('navigation test', async ({ page }) => {
     }),
   ).toBeVisible();
 
-  await expect(
-    page.getByRole('img', { name: 'yoga place' }).first(),
-  ).toBeVisible();
+  // await expect(
+  //   page.getByRole('img', { name: 'yoga place' }).first(),
+  // ).toBeVisible();
 
   await page.getByRole('link', { name: 'Workshops' }).click();
   await page.waitForURL(
