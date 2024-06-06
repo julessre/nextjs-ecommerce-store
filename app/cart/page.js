@@ -83,7 +83,6 @@ export default async function CartPage() {
                 </div>
                 <br />
               </div>
-              {/* </Link> */}
             </div>
           );
         })}

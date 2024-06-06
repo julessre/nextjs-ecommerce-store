@@ -24,12 +24,6 @@ export default function SetQuantityForm(props: Props) {
           min="1"
           data-test-id="product-quantity"
         />
-        {/* <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option> */}
-        {/* </input> */}
         <button
           data-test-id="product-add-to-cart"
           formAction={async () => {
